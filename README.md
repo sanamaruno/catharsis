@@ -1,25 +1,65 @@
-# README
+# Catharsis
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+様々な舞台作品を観劇して生まれた感情を気ままに綴り、  
+同じ気持ちを抱いた誰かと熱い思いを共有し合えるSNSサイト。  
 
-Things you may want to cover:
+自身の観劇日記のように使用することも出来れば、  
+追体験を求めて自分以外のユーザーの感想を閲覧することも可能。  
 
-* Ruby version
+現地で直接感想を語り合うことが憚られる時世だからこそ  
+「観劇が好きな人々」の拠り所となることを目的とする。  
 
-* System dependencies
+また、ユーザーのパッション溢れる投稿が、  
+チケット購入を悩んでいる人の背中を押して  
+劇場動員数や配信の売り上げ促進に繋がることも考えられるため、  
+観客だけでなく主催側にも少なからずメリットを生める可能性を秘めている。  
 
-* Configuration
 
-* Database creation
+### サイトテーマ
+観劇専用SNSサイト
 
-* Database initialization
+### テーマを選んだ理由
+世の中がコロナ禍に入ってから、  
+観劇界隈では「一人で劇場へ向かう」「自宅にて配信形式で観る」  
+という観劇スタイルが増えている。  
 
-* How to run the test suite
+そのため作品への熱い思いを胸に秘めたまま  
+口を噤んで一人帰宅するということも多いが、  
+本来「誰かと観劇後の感情を共有しあう」行為もまた  
+観劇の楽しみのひとつだと感じている。  　
 
-* Services (job queues, cache servers, search engines, etc.)
+作品の善し悪しを評価するのではなく、  
+作品から得た思いの丈を綴り、  
+その感動を分かち合えることに特化したツールが必要であると感じたため  
+このテーマを選ぶに至った。  
 
-* Deployment instructions
 
-* ...
-# catharsis
+### ターゲットユーザ
+- 自身の感想を記録しておきたい人
+- 誰かの感想を読んで事前知識を得たい人
+- 回替り演出やアドリブのレポートを読みたい人
+- 同じ作品を観た相手と共感し合いたい人
+
+### 主な利用シーン
+- 観劇前の情報収集
+- 観劇後の感想記録
+- 観劇後に誰かと感情を分かち合いたいとき
+
+
+## 設計書
+後日記載予定
+
+## チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/1FwX5SmeDIDbkOTJVqDc0n_w5C2vhMgSxXXtOeRcRA9U/edit?usp=sharing
+
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+
+## 使用素材
+後日記載予定
+
