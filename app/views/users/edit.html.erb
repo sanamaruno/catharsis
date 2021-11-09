@@ -1,2 +1,29 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+    </div>
+
+    <div class="col-8 mt-3">
+      <h2>ユーザー情報変更</h2>
+      <br>
+      <%= form_with model: @user, local: true do |f| %>
+        <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'100x100' %>
+        <br>
+        <label for="inputImage">プロフィール画像</label>
+        <br>
+        <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+        <br>
+        <label for="inputName">ユーザー名</label>
+        <br>
+        <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
+        <br>
+        <label for="inputIntroduction">好きな作品</label>
+        <br>
+        <%= f.text_area :introduction , autofocus: true, id:"inputIntroduction" %>
+        <br>
+
+        <%= f.submit '変更を保存', class: 'btn btn-secondary mt-3' %>
+      <% end %>
+    </div>
+  </div>
+</div>

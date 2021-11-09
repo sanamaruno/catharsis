@@ -1,0 +1,31 @@
+<h3>User info</h3>
+
+  <table class="table">
+    <tbody>
+      <tr>
+        <th><%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:'100x100' %></th>
+      </tr>
+      <tr>
+        <th>ユーザー名</th>
+        <th><%= user.name %></th>
+      </tr>
+      <tr>
+        <th>好きな作品</th>
+        <th><%= user.introduction %></th>
+      </tr>
+      <tr>
+        <th>follows</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th>followers</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th>お気に入り投稿</th>
+        <th></th>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= link_to '変更', edit_user_path(user), class: 'btn btn-outline-secondary' %>
