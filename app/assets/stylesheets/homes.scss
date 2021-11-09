@@ -1,3 +1,16 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+main .main-visual{
+  height: 600px;
+  color: white;
+  background-image: image-url('theater.jpg');
+  background-size: cover;
+}
+
+main .about-visual{
+  height: 600px;
+  color: white;
+  background-image: image-url('ticket.jpg');
+}
