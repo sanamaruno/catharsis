@@ -6,4 +6,11 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :users, only: [:show, :edit, :update]
+
+  resources :tags do
+    get 'posts', to: 'posts#search'
+  end
+  # ネストすることで特定のタグに紐付けられた投稿ページへ
+  # 遷移させるためのパスが使えるようになる
+
 end
