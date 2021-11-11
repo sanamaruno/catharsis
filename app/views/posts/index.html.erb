@@ -1,2 +1,19 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-3 mt-3">
+      <h2>タグリスト</h2>
+      <table class="table">
+      <% @tag_list.each do |list| %>
+       <tbody>
+         <td>
+           <%= link_to list.tag_name, tag_posts_path(tag_id: list.id) %>
+         </td>
+       </tbody>
+      <% end %>
+      </table>
+    </div>
+    <div class="col-8 mt-3">
+     <%= render 'list', posts:@posts %>
+    </div>
+  </div>
+</div>
