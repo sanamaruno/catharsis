@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
-    tag_list = params[:post][:tag_name].split(nil)
+    tag_list = params[:post][:tag_name].split(',')
     if @post.save
       @post.save_tag(tag_list)
       redirect_to post_path(@post.id)
@@ -27,6 +27,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @tag_list = @post.tags.pluck(:tag_name).join(',')
     if @post.user == current_user
       render :edit
     else
@@ -36,7 +37,9 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    tag_list = params[:post][:tag_name].split(',')
     if @post.update(post_params)
+      @post.save_tag(tag_list)
       redirect_to post_path(@post.id)
     else
       render :edit

@@ -6,7 +6,7 @@
       <%= form_with model: @post, local: true do |f| %>
         <label for="inputTag">タグ、キーワード</label>
         <br>
-        <%= f.text_field :tag_name, autofocus: true, id:"inputTag", class: 'form-control',size: "30x10" %>
+        <%= f.text_field :tag_name, value: @tag_list, autofocus: true, id:"inputTag", class: 'form-control',size: "30x10", placeholder:",で区切ると複数のタグを付けることができます" %>
         <br>
         <label for="inputPlace">劇場</label>
         <br>
