@@ -1,2 +1,29 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2 mt-3">
+      <h2>投稿編集</h2>
+      <br>
+      <%= form_with model: @post, local: true do |f| %>
+        <label for="inputTag">タグ、キーワード</label>
+        <br>
+        <%= f.text_field :tag_name, value: @tag_list, autofocus: true, id:"inputTag", class: 'form-control',size: "30x10", placeholder:",で区切ると複数のタグを付けることができます" %>
+        <br>
+        <label for="inputPlace">劇場</label>
+        <br>
+        <%= f.text_field :place, autofocus: true, id:"inputPlace", class: 'form-control',size: "30x10" %>
+        <br>
+        <label for="inputTitle">タイトル</label>
+        <br>
+        <%= f.text_field :title, autofocus: true, id:"inputTitle", class: 'form-control',size: "30x10" %>
+        <br>
+        <label for="inputBody">本文</label>
+        <br>
+        <%= f.text_area :body , autofocus: true, id:"inputBody", class: 'form-control',size: "30x20" %>
+        <br>
+        <%= f.submit '更新', class: 'btn btn-secondary mt-3' %>
+      <% end %>
+      <br>
+      <%= link_to "投稿詳細へ戻る", post_path(@post.id), class: 'btn btn-outline-secondary' %>
+    </div>
+  </div>
+</div>

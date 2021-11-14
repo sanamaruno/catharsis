@@ -1,0 +1,32 @@
+
+  <div class="my-3">
+    <%= link_to user_path(user) do %>
+      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:'100x100' %>
+    <% end %>
+  </div>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>ユーザー名</th>
+        <th><%= user.name %></th>
+      </tr>
+      <tr>
+        <th>好きな作品</th>
+        <th><%= user.introduction %></th>
+      </tr>
+      <tr>
+        <th>follows</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th>followers</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th>尊い</th>
+        <th></th>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= link_to '変更', edit_user_path(user), class: 'btn btn-outline-secondary' %>

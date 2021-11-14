@@ -1,2 +1,41 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <%= render 'users/info', user:@user %>
+    </div>
+
+     <div class="col-8 mt-3">
+       <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td>
+              <%= @post.created_at.strftime('%Y/%m/%d') %>
+            </td>
+            <td></td>
+            <td></td>
+            <% if @post.user.id == current_user.id %>
+              <td><%= link_to "編集", edit_post_path(@post.id), class: "btn btn-outline-secondary" %></td>
+              <td><%= link_to "削除", post_path(@post.id), method: :delete, class: "btn btn-outline-danger", "data-confirm" => "本当に削除しますか？" %></td>
+            <% end %>
+          </tr>
+        </tbody>
+       </table>
+       <div class="my-3">
+         <h3><%= @post.title %></h3>
+       </div>
+       <div>
+         <i class="fas fa-tags"></i>
+         <% @post_tags.each do |tag| %>
+           <%= link_to tag.tag_name, tag_posts_path(tag_id: tag.id) %>
+         <% end %>
+       </div>
+       <div class="my-3">
+         <i class="fas fa-map-marker-alt"></i>
+         <%= @post.place %>
+       </div>
+       <div class="my-3">
+         <%= @post.body %>
+       </div>
+    </div>
+  </div>
+</div>
