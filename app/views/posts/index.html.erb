@@ -1,17 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-3 mt-3">
-      <h2>タグリスト</h2>
-      <table class="table">
-      <% @tag_list.each do |list| %>
-       <tbody>
-         <td>
-           <%= link_to list.tag_name, tag_posts_path(tag_id: list.id) %>
-           <%= "(#{list.posts.count})" %>
-         </td>
-       </tbody>
-      <% end %>
-      </table>
+      <%= render 'taglist', tag_list:@tag_list %>
     </div>
     <div class="col-8 mt-3">
      <%= render 'list', posts:@posts %>
