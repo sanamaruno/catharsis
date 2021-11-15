@@ -8,9 +8,11 @@ class Post < ApplicationRecord
 
   # 投稿を編集する際に以下一連の動作が必要になる
   def save_tag(sent_tags)
+    sent_tags.uniq!
+    # 同一タグを重複して付けた場合に１つにしてくれる
     current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
     # createアクションで保存した@postに紐付くtagが存在する場合、
-    # 「タグの名前を配列として」全て取得する
+    # 「タグの名前を配列として」全て取得する(pluckの作用)
     old_tags = current_tags - sent_tags
     new_tags = sent_tags - current_tags
     # 「現在取得した@postに存在するタグ」から「送信されてきたタグ」を除いたタグをold_tags

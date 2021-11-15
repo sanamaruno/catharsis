@@ -3,4 +3,6 @@ class Tag < ApplicationRecord
   has_many :posts, through: :tag_maps
   # tag_mapsテーブルを通してpostsテーブルと関連付けた
   # これによりTag.postsとすれば、タグに紐付けられたPostを取得できる
+
+  validates :tag_name, uniqueness: true, presence: true
 end
