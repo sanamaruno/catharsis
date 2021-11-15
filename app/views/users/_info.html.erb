@@ -29,4 +29,6 @@
     </tbody>
   </table>
 
-  <%= link_to '変更', edit_user_path(user), class: 'btn btn-outline-secondary' %>
+  <%= link_to edit_user_path(user) ,class: "btn btn-outline-secondary" do %>
+    <i class="fas fa-user-cog"></i>
+  <% end %>

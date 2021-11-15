@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3 mt-3">
+      <%= render 'taglist', tag_list:@tag_list %>
+    </div>
+    <div class="col-8 mt-3">
+      <div class="mb-3">
+        <i class="fas fa-tags"></i>
+        <%= @tag.tag_name %>
+      </div>
+      <%= render 'list', posts:@posts %>
+    </div>
+  </div>
+</div>
