@@ -22,6 +22,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = @post.user
+    @like_posts = @user.like_posts
     @post_tags = @post.tags
   end
 

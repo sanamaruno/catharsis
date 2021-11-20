@@ -7,24 +7,26 @@
   <table class="table">
     <tbody>
       <tr>
-        <th>ユーザー名</th>
-        <th><%= user.name %></th>
+        <td>ユーザー名</td>
+        <td><%= user.name %></td>
       </tr>
       <tr>
-        <th>好きな作品</th>
-        <th><%= user.introduction %></th>
+        <td>好きな作品</td>
+        <td><%= user.introduction %></td>
       </tr>
       <tr>
-        <th>follows</th>
-        <th></th>
+        <td>follows</td>
+        <td></td>
       </tr>
       <tr>
-        <th>followers</th>
-        <th></th>
+        <td>followers</td>
+        <td></td>
       </tr>
       <tr>
-        <th>尊い</th>
-        <th></th>
+        <td>尊い</td>
+        <td>
+          <%= user.like_posts.count %>
+        </td>
       </tr>
     </tbody>
   </table>

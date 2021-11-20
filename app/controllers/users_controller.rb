@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.reverse_order
+    @like_posts = @user.like_posts
   end
 
   def edit

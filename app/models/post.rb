@@ -1,6 +1,13 @@
 class Post < ApplicationRecord
   belongs_to :user
 
+  has_many :likes, dependent: :destroy
+  has_many :like_posts, through: :likes, source: :post
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
+
   has_many :tag_maps, dependent: :destroy
   has_many :tags, through: :tag_maps
   # throughオプションによってtag_mapsテーブルを通してtagsテーブルとの関連付けを行う
