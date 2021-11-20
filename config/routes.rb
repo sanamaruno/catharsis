@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resource :likes,  only: [:create,  :destroy]
   end
 
+  get 'posts/like_posts'
+
+
   resources :users, only: [:show, :edit, :update]
 
   resources :tags do
