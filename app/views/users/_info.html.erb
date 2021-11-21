@@ -23,9 +23,11 @@
         <td></td>
       </tr>
       <tr>
-        <td>尊い</td>
+        <td>尊い投稿</td>
         <td>
-          <%= user.like_posts.count %>
+          <%= link_to likes_user_path(@user) do %>
+            <%= user.like_posts.count %>
+          <% end %>
         </td>
       </tr>
     </tbody>

@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3 mt-3">
+      <%= render 'posts/taglist', tag_list:@tag_list %>
+    </div>
+
+    <div class="col-8 mt-3">
+      <h2>尊い投稿一覧</h2>
+      <%= render 'posts/list', posts:@like_posts %>
+    </div>
+  </div>
+</div>

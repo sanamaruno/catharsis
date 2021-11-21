@@ -1,9 +1,11 @@
 <% if post.liked_by?(current_user) %>
-  <%= link_to post_likes_path(post), method: :delete do %>
-    ♥<%= post.likes.count %>
+  <%= link_to post_likes_path(post), method: :delete, class: "btn btn-outline-warning" do %>
+    <i class="fas fa-star"></i>
+    <%= post.likes.count %>
   <% end %>
 <% else %>
- <%= link_to post_likes_path(post), method: :post do %>
-    ♡<%= post.likes.count %>
+ <%= link_to post_likes_path(post), method: :post, class: "btn btn-outline-warning" do %>
+    <i class="far fa-star"></i>
+    <%= post.likes.count %>
   <% end %>
 <% end %>

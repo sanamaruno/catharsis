@@ -8,10 +8,11 @@ Rails.application.routes.draw do
     resource :likes,  only: [:create,  :destroy]
   end
 
-  get 'posts/like_posts'
 
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    get :likes, on: :member
+  end
 
   resources :tags do
     get 'posts', to: 'posts#search'
