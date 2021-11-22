@@ -3,8 +3,8 @@
     <tr>
       <th></th>
       <th>投稿日</th>
-      <th>劇場</th>
-      <th>タイトル</th>
+      <th style="width: 30%">劇場</th>
+      <th style="width: 40%">タイトル</th>
     </tr>
   </thead>
   <tbody>
@@ -18,10 +18,10 @@
       <td>
         <%= post.created_at.strftime('%Y/%m/%d') %>
       </td>
-      <td>
+      <td class="td-ellipsis">
         <%= post.place %>
       </td>
-      <td>
+      <td class="td-ellipsis">
         <%= link_to post_path(post.id) do %>
           <%= post.title %>
         <% end %>

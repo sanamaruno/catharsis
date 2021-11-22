@@ -30,3 +30,10 @@ a {
 header,footer,main {
   font-family: 'Yomogi',sans-serif;
 }
+
+.td-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+}
