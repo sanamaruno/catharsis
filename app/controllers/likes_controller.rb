@@ -6,13 +6,13 @@ class LikesController < ApplicationController
   def create
     like = current_user.likes.build(post_id: @post.id)
     like.save
-    redirect_back(fallback_location: root_path)
+    # app/views/likes/create.js.erb参照
   end
 
   def destroy
     like = current_user.likes.find_by(post_id: @post.id)
     like.destroy
-    redirect_back(fallback_location: root_path)
+    # app/views/likes/destroy.js.erb参照
   end
 
   private

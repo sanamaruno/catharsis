@@ -12,7 +12,7 @@
               <%= @post.created_at.strftime('%Y/%m/%d') %>
             </td>
             <td></td>
-            <td id="like_buttons_<%= @post.id %>">
+            <td id="like_btn_<%= @post.id %>">
               <%= render "likes/likes", post:@post %>
             </td>
             <% if @post.user.id == current_user.id %>
