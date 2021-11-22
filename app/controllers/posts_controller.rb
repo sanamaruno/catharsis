@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   def index
     @tag_list = Tag.all
-    @posts = Post.all.reverse_order
+    @posts = Post.page(params[:page]).reverse_order
   end
 
   def show

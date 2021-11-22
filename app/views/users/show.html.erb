@@ -6,7 +6,8 @@
 
      <div class="col-8 mt-3">
      <h2>観劇日記</h2>
-     <%= render 'posts/list', posts:@posts %>
+     <div><%= render 'posts/list', posts:@posts %></div>
+     <div class="list-paginate"><%= paginate @posts %></div>
     </div>
   </div>
 </div>

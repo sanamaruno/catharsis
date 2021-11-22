@@ -7,6 +7,7 @@
     <div class="col-8 mt-3">
       <h2>尊い投稿一覧</h2>
       <%= render 'posts/list', posts:@like_posts %>
+      <div class="list-paginate"><%= paginate @like_posts %></div>
     </div>
   </div>
 </div>

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.reverse_order
+    @posts = @user.posts.page(params[:page]).reverse_order
     @like_posts = @user.like_posts
   end
 
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   def likes
     # todo いいねした順に並び替える like_posts.in_liked_at_order
-    @like_posts = @user.like_posts
+    @like_posts = @user.like_posts.page(params[:page])
 
     # ユーザーがブックマークした投稿を探し、@like_postsに格納
     @tag_list = @like_posts.flat_map { |post| post.tags }.uniq
