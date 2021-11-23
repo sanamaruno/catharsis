@@ -11,28 +11,27 @@
         <td><%= user.name %></td>
       </tr>
       <tr>
-        <td>好きな作品</td>
-        <td><%= user.introduction %></td>
-      </tr>
-      <tr>
-        <td>follows</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>followers</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>尊い投稿</td>
+        <td>尊い投稿集</td>
         <td>
           <%= link_to likes_user_path(@user) do %>
             <%= user.like_posts.count %>
           <% end %>
         </td>
       </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
 
-  <%= link_to edit_user_path(user) ,class: "btn btn-outline-secondary" do %>
-    <i class="fas fa-user-cog"></i>
-  <% end %>
+  <div>
+    <%= user.introduction %>
+  </div>
+
+  <br>
+  <div>
+    <%= link_to edit_user_path(user) ,class: "btn btn-outline-secondary" do %>
+     <i class="fas fa-user-cog"></i>
+    <% end %>
+  </div>

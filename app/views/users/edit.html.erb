@@ -17,9 +17,9 @@
         <br>
         <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
         <br>
-        <label for="inputIntroduction">好きな作品</label>
+        <label for="inputIntroduction">プロフィールメッセージ</label>
         <br>
-        <%= f.text_area :introduction , autofocus: true, id:"inputIntroduction" %>
+        <%= f.text_area :introduction , autofocus: true, id:"inputIntroduction", placeholder:"好きな作品名など" %>
         <br>
 
         <%= f.submit '変更を保存', class: 'btn btn-secondary mt-3' %>
