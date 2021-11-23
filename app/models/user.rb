@@ -9,4 +9,7 @@ class User < ApplicationRecord
   has_many :like_posts, through: :likes, source: :post
   attachment :profile_image
 
+  validates :name, {uniqueness: true, length: {minimum:2, maximum:20}}
+  validates :introduction, length: {maximum:200}
+
 end

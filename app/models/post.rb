@@ -13,6 +13,10 @@ class Post < ApplicationRecord
   # throughオプションによってtag_mapsテーブルを通してtagsテーブルとの関連付けを行う
   # これによりPost.tagsとすればPostに紐付けられたTagの取得が可能になる
 
+  validates :title, presence: true
+  validates :body, presence: true
+  validates :place, presence: true
+
   # 投稿を編集する際に以下一連の動作が必要になる
   def save_tag(sent_tags)
     sent_tags.uniq!

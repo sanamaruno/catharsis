@@ -3,6 +3,7 @@
 
     <div class="col-8 offset-2 mt-3">
       <h2>新規投稿</h2>
+      <%= render 'layouts/errors', obj: @post %>
       <br>
       <%= form_with model: @post, local: true do |f| %>
         <label for="inputTag">タグ、キーワード</label>

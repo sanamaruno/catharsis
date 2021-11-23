@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :baria_user, only: [:destroy]
+
   def new
     @post = Post.new
   end
@@ -10,7 +13,7 @@ class PostsController < ApplicationController
       @post.save_tag(tag_list)
       redirect_to post_path(@post.id)
     else
-      redirect_to request.referer
+      render :new
     end
   end
 
@@ -63,6 +66,12 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:place, :title, :body, :user_id)
+  end
+
+  def baria_user
+    unless Post.find(params[:id]).user.id.to_i == current_user.id
+      redirect_to user_path(current_user)
+    end
   end
 
 end
