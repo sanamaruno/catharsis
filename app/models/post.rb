@@ -1,10 +1,25 @@
 class Post < ApplicationRecord
   belongs_to :user
 
+  has_many :likes, dependent: :destroy
+  has_many :liked_users, through: :likes, source: :user
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
+
   has_many :tag_maps, dependent: :destroy
   has_many :tags, through: :tag_maps
   # throughオプションによってtag_mapsテーブルを通してtagsテーブルとの関連付けを行う
   # これによりPost.tagsとすればPostに紐付けられたTagの取得が可能になる
+
+  validates :title, presence: true
+  validates :body, presence: true
+  validates :place, presence: true
+
+  # ブックマークした順に一覧表示させるためのメソッド
+  def in_liked_at_order
+  end
 
   # 投稿を編集する際に以下一連の動作が必要になる
   def save_tag(sent_tags)

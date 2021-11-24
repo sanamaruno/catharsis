@@ -12,7 +12,9 @@
               <%= @post.created_at.strftime('%Y/%m/%d') %>
             </td>
             <td></td>
-            <td></td>
+            <td id="like_btn_<%= @post.id %>">
+              <%= render "likes/likes", post:@post %>
+            </td>
             <% if @post.user.id == current_user.id %>
               <td>
                 <%= link_to edit_post_path(@post.id) ,class: "btn btn-outline-secondary" do %>
@@ -32,17 +34,17 @@
          <h3><%= @post.title %></h3>
        </div>
        <div>
-         <i class="fas fa-tags"></i>
+         <i class="fas fa-tags fa-fw"></i>
          <% @post_tags.each do |tag| %>
            <%= link_to tag.tag_name, tag_posts_path(tag_id: tag.id) %>
          <% end %>
        </div>
        <div class="my-3">
-         <i class="fas fa-map-marker-alt"></i>
+         <i class="fas fa-map-marker-alt fa-fw"></i>
          <%= @post.place %>
        </div>
        <div class="my-3">
-         <%= @post.body %>
+         <%= safe_join(@post.body.split("\n"),tag(:br)) %>
        </div>
     </div>
   </div>

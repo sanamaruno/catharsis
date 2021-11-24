@@ -1,11 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <%= render 'info', user:@user %>
+      <%= render 'info', user:@user, like_posts:@like_posts %>
     </div>
 
      <div class="col-8 mt-3">
-     <%= render 'posts/list', posts:@posts %>
+     <h2>観劇日記</h2>
+     <div><%= render 'posts/list', posts:@posts %></div>
+     <div class="list-paginate"><%= paginate @posts %></div>
     </div>
   </div>
 </div>

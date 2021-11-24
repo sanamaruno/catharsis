@@ -7,28 +7,31 @@
   <table class="table">
     <tbody>
       <tr>
-        <th>ユーザー名</th>
-        <th><%= user.name %></th>
+        <td>ユーザー名</td>
+        <td><%= user.name %></td>
       </tr>
       <tr>
-        <th>好きな作品</th>
-        <th><%= user.introduction %></th>
+        <td>尊い投稿集</td>
+        <td>
+          <%= link_to likes_user_path(user) do %>
+            <%= user.like_posts.count %>
+          <% end %>
+        </td>
       </tr>
       <tr>
-        <th>follows</th>
-        <th></th>
-      </tr>
-      <tr>
-        <th>followers</th>
-        <th></th>
-      </tr>
-      <tr>
-        <th>尊い</th>
-        <th></th>
+        <td></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
 
-  <%= link_to edit_user_path(user) ,class: "btn btn-outline-secondary" do %>
-    <i class="fas fa-user-cog"></i>
-  <% end %>
+  <div>
+    <%= user.introduction %>
+  </div>
+
+  <br>
+  <div>
+    <%= link_to edit_user_path(user) ,class: "btn btn-outline-secondary" do %>
+     <i class="fas fa-user-cog"></i>
+    <% end %>
+  </div>

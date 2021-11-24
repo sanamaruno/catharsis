@@ -4,8 +4,15 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get 'homes/about'
 
-  resources :posts
-  resources :users, only: [:show, :edit, :update]
+  resources :posts do
+    resource :likes,  only: [:create,  :destroy]
+  end
+
+
+
+  resources :users, only: [:show, :edit, :update] do
+    get :likes, on: :member
+  end
 
   resources :tags do
     get 'posts', to: 'posts#search'

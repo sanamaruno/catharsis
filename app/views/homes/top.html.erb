@@ -1,16 +1,15 @@
-<main class="main-visual">
+<main class="main-visual d-flex align-items-center">
   <div class="container">
     <div class="row">
-      <div class="mx-auto col-11">
-        <h1>Welcom to Catharsis</h1>
-      </div>
 
-      <div class="btn-wrapper col-10 mx-auto">
-        <div class="row mb-3">
-          <%= link_to "Sign up", new_user_registration_path, class:'fas fa-user-plus btn btn-outline-secondary btn-block' %>
+      <div class="col-8 mx-auto">
+         <div class="row mb-5">
+           <h4>既存アカウントのログインはこちら</h4>
+          <%= link_to " Log in", new_user_session_path, class:'fas fa-sign-in-alt fa-4x btn btn-outline-secondary btn-block' %>
         </div>
         <div class="row">
-          <%= link_to "Log in", new_user_session_path, class:'fas fa-sign-in-alt btn btn-outline-secondary btn-block' %>
+          <h4>新規アカウントのご登録はこちら</h4>
+          <%= link_to " Sign up", new_user_registration_path, class:'fas fa-user-plus fa-4x btn btn-outline-secondary btn-block' %>
         </div>
       </div>
     </div>
