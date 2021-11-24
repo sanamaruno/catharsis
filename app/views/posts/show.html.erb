@@ -44,7 +44,7 @@
          <%= @post.place %>
        </div>
        <div class="my-3">
-         <%= @post.body %>
+         <%= safe_join(@post.body.split("\n"),tag(:br)) %>
        </div>
     </div>
   </div>
