@@ -26,8 +26,8 @@ class UsersController < ApplicationController
   end
 
   def likes
-    # todo いいねした順に並び替える like_posts.in_liked_at_order
-    @like_posts = @user.like_posts.page(params[:page])
+    # ブックマークした投稿一覧を「ブックマークした順」に並び替える
+    @like_posts = @user.like_posts.order('created_at desc').page(params[:page])
 
     # ユーザーがブックマークした投稿を探し、@like_postsに格納
     @tag_list = @like_posts.flat_map { |post| post.tags }.uniq
