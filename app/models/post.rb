@@ -17,9 +17,6 @@ class Post < ApplicationRecord
   validates :body, presence: true
   validates :place, presence: true
 
-  # ブックマークした順に一覧表示させるためのメソッド
-  def in_liked_at_order
-  end
 
   # 投稿を編集する際に以下一連の動作が必要になる
   def save_tag(sent_tags)
