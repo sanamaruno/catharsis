@@ -48,7 +48,7 @@
 
 
 ## 設計書
-(https://user-images.githubusercontent.com/87061269/143733478-3006148e-4dcd-4d56-b02d-55a4891e9c29.png)
+![ER図_Catharsis drawio](https://user-images.githubusercontent.com/87061269/143733609-74097315-bf96-48bd-acde-f7d82a0e1934.png)
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1FwX5SmeDIDbkOTJVqDc0n_w5C2vhMgSxXXtOeRcRA9U/edit?usp=sharing
